@@ -79,5 +79,6 @@ print('R² menunjukkan persentase variasi nilai ujian matematika yang dapat dije
 # ======== 7. Prediksi baru (opsional) ========
 waktu_belajar = 2.5
 tidur = 7.0
-prediksi = model.predict([[waktu_belajar, tidur]])
+prediksi_input = pd.DataFrame([[waktu_belajar, tidur]], columns=['Waktu_Belajar_Jam', 'Tidur_Jam'])
+prediksi = model.predict(prediksi_input)
 print(f'Contoh prediksi: Jika belajar {waktu_belajar} jam dan tidur {tidur} jam, prediksi nilai ujian = {prediksi[0]:.2f}\n')
